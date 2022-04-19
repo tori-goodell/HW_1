@@ -152,3 +152,38 @@ CREATE TABLE actors (
     character TEXT,
     movie_id INTEGER
 );
+
+INSERT INTO movies (
+    title,
+    year,
+    rating,
+    studio_id
+) VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+    "Warner Bros."
+);
+INSERT INTO movies (
+    title, 
+    year, 
+    rating, 
+    studio_id
+) VALUES (
+    "The Dark Knight", 
+    "2008", 
+    "PG-13", 
+    "Warner Bros."
+);
+
+INSERT INTO movies (
+    title, 
+    year, 
+    rating, 
+    studio_id
+) VALUES (
+    "The Dark Knight Rises", 
+    "2012", 
+    "PG-13", 
+    "Warner Bros."
+);
