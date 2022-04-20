@@ -130,7 +130,14 @@ CREATE TABLE actors (
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT
-)
+);
+
+CREATE TABLE rosters (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER,
+    actor_id,
+    character_id
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
@@ -325,6 +332,155 @@ INSERT INTO characters (
     "Selina Kyle"
 ); 
 
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    1
+    1
+    1
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    1
+    2
+    2
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    1
+    3
+    3
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    1
+    4
+    4
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    1
+    5
+    5
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    2
+    1
+    1
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    2
+    6
+    6
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    2
+    7
+    7
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    2
+    2
+    2
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    2
+    8
+    4
+); 
+
+INSERT INTO roster (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    3
+    1
+    1
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    3
+    5
+    5
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    3
+    9
+    8
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    3
+    10
+    9
+); 
+
+INSERT INTO rosters (
+    movie_id,
+    actor_id,
+    character_id
+) VALUES (
+    3
+    11
+    10
+); 
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -332,7 +488,10 @@ INSERT INTO characters (
 
 -- The SQL statement for the movies output
 -- TODO!
-SELECT movies.title, movies.year, movies.rating, movies.studio_id FROM movies INNER JOIN studios ON studios.studio_name = movies.studio_id;
+SELECT movies.title, movies.year, movies.rating, movies.studio_id 
+FROM movies 
+INNER JOIN studios 
+ON studios.studio_name = movies.studio_id;
 
 -- Prints a header for the cast output
 .print ""
@@ -343,3 +502,8 @@ SELECT movies.title, movies.year, movies.rating, movies.studio_id FROM movies IN
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT rosters.movie_id, rosters.actor_id, rosters.character_id 
+FROM rosters 
+INNER JOIN movies ON movies.title = rosters.movie_id 
+INNER JOIN actors ON actors.name = rosters.actor_id
+INNER JOIN characters ON characters.name = rosters.character_id
